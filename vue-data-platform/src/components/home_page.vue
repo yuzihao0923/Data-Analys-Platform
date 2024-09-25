@@ -2,16 +2,15 @@
   <div id="home">
       <div>
         <!-- Main content over the background image -->
-        <div class="hello">
+        <div class="hello" style="margin-top: 250px;">
           <h1>{{ msg }}</h1>
         </div>
 
         <div class="login_type">
-          <h3>Select Login Type</h3>
           <div class="login-buttons">
-            <button @click="selectLoginType('email')">Email Login</button>
-            <button @click="selectLoginType('google')">Google Login</button>
-            <button @click="selectLoginType('facebook')">Facebook Login</button>
+            <button @click="selectLoginType('Developer')">Developer</button>
+            <button @click="selectLoginType('Manager')">Manager</button>
+            <button @click="selectLoginType('User')">User</button>
           </div>
 
           <div v-if="selectedLoginType">
@@ -42,6 +41,12 @@ export default {
 </script>
 
 <style scoped>
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
 
 /* Apply the background image to the body */
 #home {
@@ -89,8 +94,12 @@ button:hover {
   background-color: #2e854b;
 }
 
+h1 {
+  font-size: 60px;
+}
+
 h4 {
   margin-top: 20px;
-  color: #333;
+  color: white;
 }
 </style>
