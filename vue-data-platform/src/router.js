@@ -2,9 +2,9 @@
 import { createRouter, createWebHistory } from 'vue-router'
 
 import home_page from './components/home_page.vue'
-import Developer from './components/Developer.vue'
-import Manager from './components/Manager.vue'
-import User from './components/User.vue'
+import developer from 'vue-data-platform/src/components/developer_page.vue'
+import manager from 'vue-data-platform/src/components/manager_page.vue'
+import user from 'vue-data-platform/src/components/user_page.vue'
 
 const routes = [
     {
@@ -15,17 +15,17 @@ const routes = [
     {
       path: '/developer',
       name: 'Developer',
-      component: Developer
+      component: developer
     },
     {
       path: '/manager',
       name: 'Manager',
-      component: Manager
+      component: manager
     },
     {
       path: '/user',
       name: 'User',
-      component: User
+      component: user
     }
   ]
   

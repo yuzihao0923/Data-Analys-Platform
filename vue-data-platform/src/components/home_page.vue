@@ -8,9 +8,20 @@
 
         <div class="login_type">
           <div class="login-buttons">
-            <button @click="accessdeveloper('Developer')">Developer</button>
-            <button @click="selectLoginType('Manager')">Manager</button>
-            <button @click="selectLoginType('User')">User</button>
+
+            <button @click="accessdeveloper('Developer')">
+              <router-link to="/developer">Developer</router-link>
+            </button>
+
+            <button @click="selectLoginType('Manager')">
+              <router-link to="/manager">Manager</router-link>
+            </button>
+
+
+            <button @click="selectLoginType('User')">
+              <router-link to="/user">User</router-link>
+            </button>
+            
           </div>
 
           <div v-if="selectedLoginType">
@@ -35,10 +46,6 @@ export default {
   methods: {
     selectLoginType(type) {
       this.selectedLoginType = type;
-    },
-
-    accessdeveloper(){
-      window.location.href = 'http://localhost:8081/developer'
     }
   }
   
