@@ -1,15 +1,14 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <MainTitle msg="Data Analysis Platform"/>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import MainTitle from './components/home_page.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    MainTitle
   }
 }
 </script>
@@ -23,4 +22,4 @@ export default {
   color: #2c3e50;
   margin-top: 60px;
 }
-</style>
+</style>./components/home_page.vue
