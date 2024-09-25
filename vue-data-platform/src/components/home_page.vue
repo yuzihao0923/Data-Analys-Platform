@@ -8,7 +8,7 @@
 
         <div class="login_type">
           <div class="login-buttons">
-            <button @click="selectLoginType('Developer')">Developer</button>
+            <button @click="accessdeveloper('Developer')">Developer</button>
             <button @click="selectLoginType('Manager')">Manager</button>
             <button @click="selectLoginType('User')">User</button>
           </div>
@@ -35,9 +35,15 @@ export default {
   methods: {
     selectLoginType(type) {
       this.selectedLoginType = type;
+    },
+
+    accessdeveloper(){
+      window.location.href = 'http://localhost:8081/developer'
     }
   }
+  
 }
+
 </script>
 
 <style scoped>
