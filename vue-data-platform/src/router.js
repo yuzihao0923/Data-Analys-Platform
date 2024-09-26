@@ -1,17 +1,17 @@
 // src/router.js (or src/router/index.js)
 import { createRouter, createWebHistory } from 'vue-router'
 
-import home_page from './components/home_page.vue'
-import developer from './components/developer_page.vue'
-import manager from './components/manager_page.vue'
-import user from './components/user_page.vue'
+import homepage from './components/HomePage.vue'
+import developer from './components/DeveloperPage.vue'
+import manager from './components/ManagerPage.vue'
+import user from './components/UserPage.vue'
 
 
 const routes = [
     {
       path: '/',
       name: 'homepage',
-      component: home_page
+      component: homepage
     },
     {
       path: '/developer',

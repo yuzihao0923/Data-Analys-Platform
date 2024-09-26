@@ -3,7 +3,7 @@
 </template>
 
 <script>
-import MainTitle from './components/home_page.vue'
+import MainTitle from './components/HomePage.vue'
 
 export default {
   name: 'App',
