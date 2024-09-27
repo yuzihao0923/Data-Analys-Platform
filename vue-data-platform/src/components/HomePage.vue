@@ -10,7 +10,6 @@
         <div class="login-buttons">
           <!-- 跳转按钮，使用 goToPage 方法实现路由跳转 -->
           <button @click="goToPage('/developer')">Developer</button>
-          <router-link to="/developer"><button>DeVELOPER</button></router-link>
           <button @click="goToPage('/manager')">Manager</button>
           <button @click="goToPage('/user')">User</button>
         </div>
