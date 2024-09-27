@@ -1,6 +1,7 @@
-import { createApp } from 'vue'
-import App from './App.vue'
-import router from './router' // Import the router
+import { createApp } from 'vue';
+import App from './App.vue';
+import router from './router'; // 引入路由器
 
-createApp(App).mount('#app')
-App.use(router) // Use the router
+createApp(App)
+  .use(router) // 使用路由器
+  .mount('#app'); // 挂载到 #app

@@ -12,6 +12,9 @@
 </script>
   
 <style scoped>
-  /* Your styles here */
+
+h1 {
+  color: red;
+}
 </style>
   

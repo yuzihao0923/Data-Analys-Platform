@@ -1,16 +1,11 @@
 <template>
-  <MainTitle msg="Data Analysis Platform"/>
+  <div id="app">
+    <router-view></router-view> <!-- 用于渲染当前激活的路由组件 -->
+  </div>
+
 </template>
 
 <script>
-import MainTitle from './components/HomePage.vue'
-
-export default {
-  name: 'App',
-  components: {
-    MainTitle
-  }
-}
 </script>
 
 <style>
@@ -22,4 +17,4 @@ export default {
   color: #2c3e50;
   margin-top: 0px;
 }
-</style>./components/home_page.vue
+</style>

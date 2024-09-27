@@ -1,93 +1,77 @@
 <template>
   <div id="home">
-      <div>
-        <!-- Main content over the background image -->
-        <div class="hello" style="margin-top: 250px;">
-          <h1>{{ msg }}</h1>
+    <div>
+      <!-- Main content over the background image -->
+      <div class="hello" style="margin-top: 250px;">
+        <h1>Data Analysis Platform</h1> <!-- 这里的 msg 是父组件传递过来的 -->
+      </div>
+
+      <div class="login_type">
+        <div class="login-buttons">
+          <!-- 跳转按钮，使用 goToPage 方法实现路由跳转 -->
+          <button @click="goToPage('/developer')">Developer</button>
+          <router-link to="/developer"><button>DeVELOPER</button></router-link>
+          <button @click="goToPage('/manager')">Manager</button>
+          <button @click="goToPage('/user')">User</button>
         </div>
 
-        <div class="login_type">
-          <div class="login-buttons">
-
-            <button @click="accessdeveloper('Developer')">
-              <router-link to="/developer">Developer</router-link>
-            </button>
-
-            <button @click="selectLoginType('Manager')">
-              <router-link to="/manager">Manager</router-link>
-            </button>
-
-
-            <button @click="selectLoginType('User')">
-              <router-link to="/user">User</router-link>
-            </button>
-            
-          </div>
-
-          <div v-if="selectedLoginType">
-            <h4>You selected: {{ selectedLoginType }} login</h4>
-          </div>
+        <div v-if="selectedLoginType">
+          <h4>You selected: {{ selectedLoginType }} login</h4>
         </div>
       </div>
+    </div>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'MainTitle',
+  name: 'HomePage',
   props: {
-    msg: String
+    msg: String // 接收父组件传递的标题信息
   },
   data() {
     return {
-      selectedLoginType: '' // Store the selected login type
-    }
+      selectedLoginType: '' // 存储选择的登录类型
+    };
   },
   methods: {
-    selectLoginType(type) {
-      this.selectedLoginType = type;
+    goToPage(route) {
+      // 使用 Vue Router 的 push 方法跳转到指定路由
+      this.$router.push(route);
     }
   }
-  
-}
-
+};
 </script>
 
 <style scoped>
-
+/* 样式部分可以保持不变 */
 html, body {
   height: 100%;
   margin: 0;
   padding: 0;
 }
 
-/* Apply the background image to the body */
 #home {
-
   width: 100%;
   height: 100%;
-  background-image: url('../assets/login_jpg.jpg'); /* Use @ for Vue assets */
-  
-  background-size: cover; /* Make sure the image covers the entire viewport */
-  background-position: center; /* Center the image */
-  background-repeat: no-repeat; /* No repeating */
-  background-attachment: fixed; /* The background stays fixed when scrolling */
-  position: absolute; /* Ensure content is above the background */
-
+  background-image: url('../assets/login_jpg.jpg'); /* 使用 @ 符号指向 src 目录 */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  position: absolute;
 }
 
-/* Style the main content */
+
 .hello, .login_type {
   position: relative;
-  z-index: 1; /* Make sure content is above the background */
+  z-index: 1;
   padding: 20px;
-  /* background: rgba(255, 255, 255, 0.8); Semi-transparent background for readability */
   border-radius: 8px;
   margin: 20px;
   color: white;
 }
 
-/* Button styles */
 .login-buttons {
   margin: 10px 0;
 }
