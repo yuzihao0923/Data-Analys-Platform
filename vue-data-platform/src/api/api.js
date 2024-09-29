@@ -1,6 +1,6 @@
-import express from 'express';
-import connection from './database.js';
-import cors from 'cors';
+const express = require('express'); // 使用 CommonJS 的 require 导入 express
+const connection = require('./database.js'); // 使用 require 导入数据库连接
+const cors = require('cors'); // 使用 require 导入 cors
 
 const app = express();
 const port = 3001;

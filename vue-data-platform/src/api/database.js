@@ -1,7 +1,7 @@
 // database.js
-import { createConnection } from 'mysql2';
+const mysql = require('mysql2'); // 使用 CommonJS 的 require 导入 mysql2
 
-const connection = createConnection({
+const connection = mysql.createConnection({
   host: 'localhost',
   user: 'root',
   password: '123456',
@@ -9,6 +9,7 @@ const connection = createConnection({
   multipleStatements: true
 });
 
+// 连接数据库
 connection.connect((err) => {
   if (err) {
     console.error('数据库连接失败:', err);
@@ -17,4 +18,5 @@ connection.connect((err) => {
   console.log('数据库连接成功');
 });
 
-export default connection; // 导出 connection 而不是 query
+// 导出 connection 对象
+module.exports = connection;
