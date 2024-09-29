@@ -1,5 +1,5 @@
-export default {
-  presets: [
-    '@vue/cli-plugin-babel/preset'
-  ]
-};
+export default async function () {
+  return {
+    presets: ['@babel/preset-env'],
+  };
+}

@@ -1,5 +1,5 @@
 import express from 'express';
-import connection from '../server/database.js';
+import connection from './database.js';
 import cors from 'cors';
 
 const app = express();
