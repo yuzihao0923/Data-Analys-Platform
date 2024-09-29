@@ -64,8 +64,8 @@ export default {
   },
   methods: {
     // 获取数据库列表
-    fetchDatabases() {
-  fetch('http://localhost:3000/databases')
+fetchDatabases() {
+  fetch('http://localhost:3001/databases')
     .then(response => {
       if (!response.ok) {
         throw new Error('获取数据库列表失败');
@@ -84,7 +84,7 @@ export default {
     fetchTables() {
       if (this.selectedDatabase) {
         this.isLoading = true;
-        fetch(`http://localhost:3000/databases/${this.selectedDatabase}/tables`)
+        fetch(`http://localhost:3001/databases/${this.selectedDatabase}/tables`)
           .then(response => response.json())
           .then(data => {
             // 你可能需要调整这里的字段名称，确保后端返回的数据格式
@@ -103,7 +103,7 @@ export default {
     fetchTableData() {
       if (this.selectedDatabase && this.selectedTable) {
         this.isLoading = true;
-        fetch(`http://localhost:3000/databases/${this.selectedDatabase}/tables/${this.selectedTable}`)
+        fetch(`http://localhost:3001/databases/${this.selectedDatabase}/tables/${this.selectedTable}`)
           .then(response => response.json())
           .then(data => {
             this.tableData = data;
